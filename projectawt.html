@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<title>Avoid user to enter wrong information</title>
+<head>
+<link rel="stylesheet" href="style1.css">
+	<script type="text/javascript" src="usr.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	
+<div>
+<h1>Sign Up</h1><br>
+<form >
+<label>Name:</label><br>
+<input type="text" pattern=".{5,20}" class ="tb" placeholder="Enter your name" title="characters should not be less than 5 or greater than 20" onkeyup="alpha(this)" required="" /><br><br>
+<label>Email:</label><br>
+<input type="Email" class ="tb" pattern="/.+@(gmail)\.com$/" title="email should be of only gmail" placeholder="Enter your email" id="email" required="" /><br><br>
+<label>Re-enter Email:</label><br>
+<input type="Email"  pattern="/.+@(gmail)\.com$/" title="email should be of only gmail" class ="tb" placeholder="Confirm your email address" id="confemail" required="" /><br><br>
+<label>Password:</label><br>
+<input type="Password" id="pa" class ="tb" placeholder="Enter your Password"><br><br><br>
+<input type="submit"   class="submit" value="Submit">
+</form>
+</div>
+<script>
+	document.querySelector('.submit').onclick = function(){
+	var email = document.querySelector("#email").value;
+	var confirmemail = document.querySelector("#confemail").value;
+    var pass = document.querySelector("#pa").value;
+
+
+	 if (email == "") {
+	 	alert('Email cannot be empty');
+
+	 }
+	 else if(pass == ""){
+       alert('pass is empty');
+	 }
+	 else if (email!=confirmemail) {
+	 	alert("Email didn't match.");
+	 	return false;
+
+	 }
+	 else{
+	  document.write("you have successfully signed up");
+       return true;
+	 
+	 }
+	 
+}
+$(document).ready(function(){
+  $(".submit").css({"cursor":"pointer","padding":"5px","border-radius": "5px","font-family": "system-ui",
+  "font-weight": "bold","background": "rgba(0, 187, 255, 0.15)", "color": "rgba(0, 0, 0, 0.67)"});
+});
+  $(document).ready(function(){
+  $(".tb").css({"width":"100%","padding":"8px","background-color": "transparent","border":"none","color":"white","border-bottom":" 1px solid black"});
+});
+
+
+
+</script>
+</body>
+</html>

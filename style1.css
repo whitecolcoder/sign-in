@@ -1,0 +1,25 @@
+body{
+	background-image: url("bk1.jpg"); 
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+div{
+	background:rgba(0,0,0,.10);	 
+	background-image:url("bk1.jpg");
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.7);
+	border-radius: 21px;
+	padding-left: 70px;
+	padding-top: 15px;
+    padding-right: 120px;
+    padding-bottom: 58px; 
+}
+
+label{
+	color:black;
+}
+
+
